@@ -91,3 +91,14 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 
 修改文件 sudo vi /etc/kubernetes/manifests/kube-apiserver.yaml， 添加命令参数: --service-node-port-range=1000-60000
 
+### 设置node label
+
+```sh
+kubectl label nodes {nodename} nodetype=storage
+```
+
+### Q: 0/1 nodes are available: 1 node(s) had taints that the pod didn't tolerate.
+
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
