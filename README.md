@@ -84,3 +84,10 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 ```
 
 浏览器访问 http://{ip}:30000 , 选择token验证, 输入token。
+
+## 其他
+
+### 修改动态端口范围
+
+修改文件 sudo vi /etc/kubernetes/manifests/kube-apiserver.yaml， 添加命令参数: --service-node-port-range=1000-60000
+
