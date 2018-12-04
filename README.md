@@ -85,6 +85,15 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 
 浏览器访问 http://{ip}:30000 , 选择token验证, 输入token。
 
+## 部署监控
+
+
+检出目录 https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus
+
+```sh
+kubectl delete -f manifests/ || true
+```
+
 ## 其他
 
 ### 修改动态端口范围
